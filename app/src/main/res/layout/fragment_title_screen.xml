@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/abl_goal_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:elevation="0dp">
+
+    <com.google.android.material.appbar.CollapsingToolbarLayout
+        android:id="@+id/collapsing_toolbar_goals"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_scrollFlags="exitUntilCollapsed">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+           <!-- android:fitsSystemWindows="true"
+            app:contentInsetStart="0dp"
+            app:layout_collapseMode="pin"-->
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_arrow"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="5dp"
+                    app:itemIconTint="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/tvdbicon" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_text_title"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:textColor="@color/black"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/iv_arrow"
+                    app:layout_constraintTop_toTopOf="@id/iv_arrow"
+                    tools:text="The Tvdb" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_search_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_search"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_practice_goal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:visibility="visible"
+            app:layout_collapseMode="parallax"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_chapter_goal_name"
+                android:layout_width="200dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Enjoy unlimited shows for free" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+   <!-- <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="150dp"
+        android:clipToPadding="false"
+        android:visibility="visible"
+        tools:itemCount="10"
+        tools:listitem="@layout/item_episode_list" />-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="100dp">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/image_episode"
+        android:src="@drawable/videothumbnail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_view_episode"
+        app:layout_constraintTop_toBottomOf="@id/image_episode"
+        android:layout_marginTop="10dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

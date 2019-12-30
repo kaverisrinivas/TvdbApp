@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Login Shine</string>
+    <string name="text">"No account yet?Create one"</string>
+    <string name="title">Login</string>
+    <string name="def">Email</string>
+    <string name="password">Password</string>
+    <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+
+</resources>
