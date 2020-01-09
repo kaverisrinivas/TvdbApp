@@ -26,41 +26,56 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 //import com.example.loginshine.adapters.EpisodeAdapter
 import com.example.loginshine.adapters.OnNoteClickListener
-import com.example.loginshine.model.EpisodeData
+import com.example.loginshine.model.BaseResponse
 import kotlinx.android.synthetic.main.fragment_title_screen.*
 import org.w3c.dom.Text
 
 
 class ChildActivity : AppCompatActivity() {
-
-    /*  private var editText: EditText? = null
+/*
+      private var editText: EditText? = null
     var editText1: EditText? = null
     var loginbutton: Button? = null*/
 
    // private var episodeAdapter: EpisodeAdapter = EpisodeAdapter()
   //  private var recyclerView: RecyclerView? = null
     private var textView: TextView? = null
-    private var textView2:TextView?=null
+   // private var textView2:TextView?=null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_title_screen)
-        textView=findViewById(R.id.tv_text_title)
-        textView2=findViewById(R.id.tv_chapter_goal_name)
-
+          setContentView(R.layout.fragment_title_screen)
+          textView=findViewById(R.id.text_view_episode)
+          //textView2=findViewById(R.id.tv_chapter_goal_name)
       //  recyclerView = findViewById(R.id.recycler_view)
       //  recyclerView?.adapter = episodeAdapter
        // recyclerView?.setHasFixedSize(true)
       //  recyclerView?.layoutManager = LinearLayoutManager(this)
         val model = ViewModelProviders.of(this)[MyViewModel::class.java]
         model.loadUsers()
-        model.users.observe(this, Observer<EpisodeData> { item ->
-                    item.getepisodeName()
-                  // episodeAdapter?.setList(list)
-                    Log.d("users", "value posted")
-                }
+        model.users.observe(this, Observer<BaseResponse> { item ->
+            textView?.text = model._dataObject.value?.episodeName
+            // episodeAdapter?.setList(list)
+            Log.d("users", "value posted")
+        }
         )
+
+      /*
+      val service = RetrofitClientInstance.getRetrofit()?.create(GetDataService::class.java)
+
+        val call = service?.episodeList(pathId = 12)
+        //  service.getSinglePhoto(1);
+        call?.enqueue(object : Callback<EpisodeData> {
+            override fun onResponse(call: Call<EpisodeData>, response: Response<EpisodeDat
+                Log.d("msg",response.body().toString())
+            }
+
+            override fun onFailure(call: Call<EpisodeData>, t: Throwable) {
+               Log.d("debug","Error - ${t.printStackTrace()}")
+
+            }
+        })*/
 
         /*val sharedPreference = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE)
         val editor = sharedPreference.edit()
@@ -68,31 +83,37 @@ class ChildActivity : AppCompatActivity() {
         editor.commit()*/
     }
 }
-        /* editText = findViewById(R.id.edit_text)
-        editText1 = findViewById(R.id.edit_text2)*/
-        /*    loginbutton = findViewById(R.id.login_button)*/
-        /*  loginbutton?.setOnClickListener {
-                val login = Login("282a106112656704ffe7888b260d9dd1", "kaveri nithya", "5DFC6538F3EF22.29811054")
-                val service = RetrofitClientInstance.getRetrofit()?.create(GetDataService::class.java)
-                val call = service?.createLogin(login)
-                call?.enqueue(object : Callback<LoginData> {
-                    override fun onResponse(call: Call<LoginData>, response: Response<LoginData>) {
-                        Toast.makeText(applicationContext, "successful" + response.body()?.token, Toast.LENGTH_LONG).show()
-                        Log.d("token", response.body()?.token ?: "")
-                    }
-
-                    override fun onFailure(call: Call<LoginData>, t: Throwable) {
-                        Toast.makeText(this@ChildActivity, "something wrong", Toast.LENGTH_LONG).show()
-                    }
-                })
-            }*/
 
 
 
 
         /* setupSharedPreferences()
          setupNetworkPermissions()*/
+/*     setContentView(R.layout.activity_main)
+      editText = findViewById(R.id.edit_text)
+      editText1 = findViewById(R.id.edit_text2)
+      loginbutton = findViewById(R.id.login_button)
+      loginbutton?.setOnClickListener {
+          val login = Login("282a106112656704ffe7888b260d9dd1", "kaveri nithya", "5E141FC126B684.45648904")
+          val service = RetrofitClientInstance.getRetrofit()?.create(GetDataService::class.java)
+          val call = service?.createLogin(login)
+          call?.enqueue(object : Callback<LoginData> {
+              override fun onResponse(call: Call<LoginData>, response: Response<LoginData>) {
+                  Toast.makeText(applicationContext, "successful" + response.body()?.token, Toast.LENGTH_LONG).show()
+                  Log.d("token", response.body()?.token ?: "")
+              }
 
+              override fun onFailure(call: Call<LoginData>, t: Throwable) {
+                  Toast.makeText(this@ChildActivity, "something wrong", Toast.LENGTH_LONG).show()
+              }
+          })
+      }*/
+/*model.users.observe(this, Observer<EpisodeData> {
+
+    // episodeAdapter?.setList(list)
+    Log.d("users",it.episodeName?:"null" )
+}
+)*/
 
 
 
