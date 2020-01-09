@@ -57,7 +57,7 @@
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@id/iv_arrow"
                     app:layout_constraintTop_toTopOf="@id/iv_arrow"
-                    tools:text="The Tvdb" />
+                    android:text="The Tvdb" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iv_search_bar"
@@ -94,7 +94,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Enjoy unlimited shows for free" />
+                android:text="Enjoy unlimited shows for free" />
 
 
 
@@ -119,19 +119,25 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:id="@+id/image_episode"
         android:src="@drawable/videothumbnail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/text_view_episode"
-        app:layout_constraintTop_toBottomOf="@id/image_episode"
-        android:layout_marginTop="10dp"/>
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/image_episode"
+        app:layout_constraintTop_toTopOf="@id/image_episode"
+        app:layout_constraintBottom_toBottomOf="@id/image_episode"
+        android:text="hi"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:layout_marginStart="20dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
